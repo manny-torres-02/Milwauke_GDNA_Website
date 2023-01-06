@@ -26,6 +26,7 @@ class RootIndex extends React.Component {
 
 export default RootIndex
 
+// TODO: Line 51 - is the QUERY for the HEro Image - it is attached to person. 
 export const pageQuery = graphql`
   query HomeQuery {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
