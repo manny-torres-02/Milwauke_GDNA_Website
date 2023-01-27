@@ -19,8 +19,32 @@ const Navigation = () => (
         <Link to="/blog/" activeClassName="active">
           Blog
         </Link>
-      
       </li>
+      <li className={styles.navigationItem}>
+        <Link to="/test" activeClassName="active">
+          Test
+        </Link>
+      </li>
+      <li>
+        <Link to="/calendar/">Calendar</Link>
+      </li>
+      <li className={styles.navigationItem}>
+        <Link to="/test/" activeClassName="active">
+          testingCalendar
+        </Link>
+      </li>
+      {/* <li className={styles.navigationItem}>
+        <Link to='/calendar/' activeClassName='active'>
+          calendar
+        </Link>
+
+      </li>
+      <li className={styles.navigationItem}>
+        <Link to='/about/' activeClassName='active'>
+          about
+        </Link>
+
+      </li> */}
     </ul>
   </nav>
 )
