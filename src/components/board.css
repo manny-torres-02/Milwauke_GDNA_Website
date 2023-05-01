@@ -1,5 +1,79 @@
+/* .mainbox{
+    width: 90%;
+} */
+
 .board_member_photo {
-    border-radius: 50%;
-    height:40%;
-    width:40%;
+  border-radius: 50%;
+  margin: 0 auto;
+   /* height: 45%; */
+  /* width: 50%; */ 
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
+}
+
+.flexing {
+  /* width: 80%; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: center;
+}
+
+.box {
+  width: 45%;
+  /* height: 100px; */
+}
+
+.box1 {
+  /* background-color: red; */
+}
+
+.box2 {
+  /* background-color: blue; */
+}
+
+h4 {
+  text-align: center;
+}
+/* REDO The media Queries */
+@media (max-width: 480px) {
+  body {
+    width: 100%
+  }
+  .details {
+    padding-top: var(--space-3xl);
+  }
+  .flexing {
+    flex-direction: column;
+  }
+  .box {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: var(--size-gutter);
+  }
+
+  /* .details {
+    max-width: 44rem;
+    padding: var(--space-3xl) var(--size-gutter) 0;
+  } */
+}
+
+@media (min-width: 1024px) {
+  /* .image {
+      margin-left: auto;
+      width: 85%;
+    } */
+
+  /* .details {
+    left: var(--size-gutter);
+    padding: var(--space-3xl) var(--size-gutter) 0 0;
+  } */
 }

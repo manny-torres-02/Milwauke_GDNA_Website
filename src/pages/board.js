@@ -1,114 +1,116 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import { graphql, useStaticQuery } from 'gatsby'
-import "../components/board.css"
-
+import '../components/global.css'
+import '../components/board.css'
+import '../components/variables.css'
+import Container from '../components/container'
+// import '../components/global.css'
 const Board = () => {
+  // QUERY to pull the board members
+  // const data = useStaticQuery(graphql`
 
-    // QUERY to pull the board members 
-    // const data = useStaticQuery(graphql`
-    
-    //   `)
+  //   `)
 
-    // const data = useStaticQuery(graphql`
-    // query boardQuery {
-    //     contentfulCalendar {
-    //       calendarPdf {
-    //         file {
-    //           url
-    //         }
-    //       }
-    //     }
-    //   }
-    //   `)
+  // const data = useStaticQuery(graphql`
+  // query boardQuery {
+  //     contentfulCalendar {
+  //       calendarPdf {
+  //         file {
+  //           url
+  //         }
+  //       }
+  //     }
+  //   }
+  //   `)
 
-    // this works because it is an 'array'
+  // this works because it is an 'array'
 
-    // const test = useStaticQuery(graphql`
-    // query testQuery {
-    //     contentfulBoardMembers {
-    //       boardMember
-    //     }
-    //   }
-      
-    // `)
+  // const test = useStaticQuery(graphql`
+  // query testQuery {
+  //     contentfulBoardMembers {
+  //       boardMember
+  //     }
+  //   }
 
-    // const test2 = useStaticQuery(graphql`
-    // query test2 {
-    //     allContentfulBoardMembers {
-    //       nodes {
-    //         boardMember
-    //         boardMemberDescription {
-    //           raw
-    //         }
-    //         boardMemberPhoto {
-    //           file {
-    //             url
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-      
-    // `)
+  // `)
 
-    // const test3 = useStaticQuery(graphql`
-    // query test3 {
-    //   allContentfulBoardMembers {
-    //     nodes {
-    //       boardMemberDescription {
-    //         raw
-    //       }
-    //       boardMember
-    //       testfield {
-    //         internal {
-    //           content
-    //         }
-    //         id
-    //       }
-    //       boardMemberPhoto {
-    //         file {
-    //           url
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-    
-    //   `)
+  // const test2 = useStaticQuery(graphql`
+  // query test2 {
+  //     allContentfulBoardMembers {
+  //       nodes {
+  //         boardMember
+  //         boardMemberDescription {
+  //           raw
+  //         }
+  //         boardMemberPhoto {
+  //           file {
+  //             url
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
 
+  // `)
 
+  // const test3 = useStaticQuery(graphql`
+  // query test3 {
+  //   allContentfulBoardMembers {
+  //     nodes {
+  //       boardMemberDescription {
+  //         raw
+  //       }
+  //       boardMember
+  //       testfield {
+  //         internal {
+  //           content
+  //         }
+  //         id
+  //       }
+  //       boardMemberPhoto {
+  //         file {
+  //           url
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
-    // const test3 = useStaticQuery(graphql`
-    // query test3 {
-    //   allContentfulBoardMembers {
-    //     nodes {
-    //       boardMember
-    //       boardMemberPhoto {
-    //         file {
-    //           url
-    //         }
-    //       }
-    //       childContentfulBoardMembersTestfieldTextNode {
-    //         sys {
-    //           type
-    //         }
-    //         internal {
-    //           content
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-    // `)
+  //   `)
 
-    const test4 = useStaticQuery(graphql`
+  // const test3 = useStaticQuery(graphql`
+  // query test3 {
+  //   allContentfulBoardMembers {
+  //     nodes {
+  //       boardMember
+  //       boardMemberPhoto {
+  //         file {
+  //           url
+  //         }
+  //       }
+  //       childContentfulBoardMembersTestfieldTextNode {
+  //         sys {
+  //           type
+  //         }
+  //         internal {
+  //           content
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  // `)
+
+  const test4 = useStaticQuery(graphql`
     query test4 {
       allContentfulBoardMember2 {
         edges {
           node {
             name
-            id
+            bioPhotos {
+              url
+            }
             biography {
               biography
             }
@@ -116,65 +118,74 @@ const Board = () => {
         }
       }
     }
-    
-    `)
-// console.log(testBoard)
+  `)
+  // console.log(testBoard)
 
-console.log(test4)
+  console.log(test4)
 
-      const books = [
-        {
-        name: 'Pride and Prejudice',
-        author: 'Jane Austen',
-        genre: "fiction",
-        year_published: 1813,
-        id:1
-    
-      },
-     {
-        name: 'The Great Gatsby',
-        author: ' F. Scott Fitzgerald',
-        genre: "tragedy",
-        year_published: 1925,
-        id:2
-       },
-     ];
-    
+  const books = [
+    {
+      name: 'Pride and Prejudice',
+      author: 'Jane Austen',
+      genre: 'fiction',
+      year_published: 1813,
+      id: 1,
+    },
+    {
+      name: 'The Great Gatsby',
+      author: ' F. Scott Fitzgerald',
+      genre: 'tragedy',
+      year_published: 1925,
+      id: 2,
+    },
+  ]
 
-    return(
-        <Layout>
-        {/* <div>
+  return (
+    <Layout>
+      {/* <div>
         {
             test3.allContentfulBoardMembers.nodes.map(nodes => 
             <div>
               <h4> {nodes.boardMember}</h4>
               <p> {nodes.boardMemberPhoto.file.url} </p>
               {/* <p> {nodes.childContentfulBoardMembersTestfieldTextNode.id}</p> */}
-                {/* <h4>{nodes.boardMember}</h4> */}
-                {/* <img className="board_member_photo" src = {nodes.boardMemberPhoto.file.url}/> */}
-                {/* <p>{nodes.boardMemberDescription.raw}</p> */}
-                {/* <p>{nodes.internal.}</p> */}
+      {/* <h4>{nodes.boardMember}</h4> */}
+      {/* <img className="board_member_photo" src = {nodes.boardMemberPhoto.file.url}/> */}
+      {/* <p>{nodes.boardMemberDescription.raw}</p> */}
+      {/* <p>{nodes.internal.}</p> */}
 
+      {/* <p> {nodes.boardMember}</p> */}
+      {/* </div>) */}
 
-                 {/* <p> {nodes.boardMember}</p> */}
-                {/* </div>) */}
+      {/* } */}
 
-        {/* } */}
-      
-        {/* </div> */} 
+      {/* </div> */}
 
-        {<div>
-          {test4.allContentfulBoardMember2.edges.map(edges =>
-          <div>
-            <p> {edges.node.id} </p>
-            <p> {edges.node.name} </p>
-            <p> {edges.node.biography.biography}</p>
-          </div>
-          )
-          }</div>}
-        </Layout>
-
-    )
+      {
+        <Container>
+        <div className="flexing">
+          {test4.allContentfulBoardMember2.edges.map((edges) => (
+            // <div className='container'>
+            <div className=" box1 box">
+              <div className=" box2">
+                {/* <p> {edges.node.id} </p> */}
+                <h4
+                className=''> {edges.node.name} </h4>
+                <img
+                  className="board_member_photo"
+                  src={edges.node.bioPhotos.url}
+                />
+                {/* <p>{edges.node.bioPhotos.filename} </p> */}
+                <p> {edges.node.biography.biography}</p>
+                {/* </div> */}
+              </div>
+            </div>
+          ))}
+        </div>
+        </Container>
+      }
+    </Layout>
+  )
 }
 
 export default Board
