@@ -33,6 +33,11 @@ const Navigation = () => (
           Volunteer
         </Link>
       </li>
+      <li className={styles.navigationItem}>
+        <Link to="/Resources" activeClassName="active">
+          Resources
+        </Link>
+      </li>
       {/* <li className={styles.navigationItem}>
         <Link to='/calendar/' activeClassName='active'>
           calendar
