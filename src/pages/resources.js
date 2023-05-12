@@ -6,10 +6,10 @@ import Container from '../components/container'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const Resources = () => {
-    const resourceQuery = useStaticQuery(`graphql
+    // const resourceQuery = useStaticQuery(`graphql
 
-    `
-    )
+    // `
+    // )
     
     
 

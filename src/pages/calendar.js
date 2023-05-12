@@ -21,8 +21,8 @@ const Calendar = ({}) => {
     return (
         <Layout>
       <div className="about-container">
-        {data.contentfulCalendar.calendarPdf.title}
-       <h1>hello</h1> 
+        {/* {data.contentfulCalendar.calendarPdf.title}
+       <h1>hello</h1>  */}
        <img src={data.contentfulCalendar.calendarPdf.file.url}/>
        <h3> {data.contentfulCalendar.calendarPdf.description}</h3>
       </div>
