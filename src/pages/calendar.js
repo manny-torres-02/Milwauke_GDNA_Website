@@ -18,6 +18,21 @@ const Calendar = ({}) => {
         }
       }`)
       
+      // const data = useStaticQuery(graphql`
+      // query MyQuery {
+      //   contentfulAsset(contentful_id: {eq: "1jBokgJn1ZPBk2bzv4lFaC"}) {
+      //     calendarPdf
+      //       title
+      //       file {
+      //         url
+      //       }
+      //       description
+      //     }
+      //   }
+      // }`)
+
+      console.log(data)
+
     return (
         <Layout>
       <div className="about-container">
