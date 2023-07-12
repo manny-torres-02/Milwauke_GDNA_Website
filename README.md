@@ -62,6 +62,11 @@ Run a production build into `./public`. The result is ready to be put on any sta
 
 Spin up a production-ready server with your blog. Don't forget to build your page beforehand.
 
+
+## Gatsby Develop
+
+
+
 ## Deployment
 
 See the [official Contentful getting started guide](https://www.contentful.com/developers/docs/tutorials/general/get-started/).
