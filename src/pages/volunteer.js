@@ -55,7 +55,8 @@ const Volunteer = () => {
           <h3>
             How To help?
           </h3>
-          <p> Contact a board member with your interest. </p>
+          <p> Contact a board member at the below email with your interest. </p>
+          <a href="mailto:info@milwaukeegdna.com">info@milwaukeegdna.com</a>
         </div>
       </Container>
     </Layout>
