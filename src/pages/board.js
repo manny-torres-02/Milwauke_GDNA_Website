@@ -73,14 +73,16 @@ const Board = () => {
           {test4.allContentfulBoardMember2.edges.map((edges) => (
             // <div className='container'>
             <div className=" box1 box">
-              <div className=" box2">
+              <div >
                 {/* <p> {edges.node.id} </p> */}
                 <h4
                 className=''> {edges.node.name} </h4>
+                <div  className="image-container ">
                 <img
                   className="board_member_photo"
                   src={edges.node.bioPhotos.url}
                 />
+                </div>
                 {/* <p>{edges.node.bioPhotos.filename} </p> */}
                 <p> {edges.node.biography.biography}</p>
                 {/* </div> */}
