@@ -27,6 +27,7 @@ class BlogPostTemplate extends React.Component {
     const options = {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        console.log(node)
         const { gatsbyImage, description } = node.data.target
         return (
            <GatsbyImage
@@ -37,6 +38,11 @@ class BlogPostTemplate extends React.Component {
         },
       },
     };
+
+// const output = renderRichText(options)
+const output = renderRichText(post.body, options)
+console.log(post.body)
+// console.log(output)
 
     return (
       <Layout location={this.props.location}>
@@ -62,6 +68,10 @@ class BlogPostTemplate extends React.Component {
             <div className={styles.body}>
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
+            <GatsbyImage 
+            image={post.heroImage?.gatsbyImage}
+            alt={post.title}
+            />
             <Tags tags={post.tags} />
             {(previous || next) && (
               <nav>
@@ -93,7 +103,7 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
+    query BlogPostBySlug(
     $slug: String! 
     $previousPostSlug: String
     $nextPostSlug: String
@@ -111,10 +121,19 @@ export const pageQuery = graphql`
         resize(height: 630, width: 1200) {
           src
         }
+        file {
+          url
+        }
       }
       body {
         raw
-        
+        references {
+          ... on ContentfulAsset {
+            __typename
+            contentful_id
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
       }
       tags
       description {
