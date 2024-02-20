@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
+// import ReactGA from "react-ga4";
+
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
@@ -11,6 +13,8 @@ class RootIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
     const [author] = get(this, 'props.data.allContentfulPerson.nodes')
+
+    // ReactGA.initialize("G-839RLFWWPC");
 
     return (
       <Layout location={this.props.location}>
