@@ -23,20 +23,20 @@ class BlogPostTemplate extends React.Component {
     )
     const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
     const { minutes: timeToRead } = readingTime(plainTextBody)
-    
+
     const options = {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { gatsbyImage, description } = node.data.target
-        return (
-           <GatsbyImage
-              image={getImage(gatsbyImage)}
-              alt={description}
-           />
-         )
+          const { gatsbyImageData, description, file } = node.data.target
+          const image = getImage(gatsbyImageData)
+          return image ? (
+            <GatsbyImage image={image} alt={description || ''} />
+          ) : (
+            <img src={file.url} alt={description || ''} />
+          )
         },
       },
-    };
+    }
 
     return (
       <Layout location={this.props.location}>
@@ -45,7 +45,6 @@ class BlogPostTemplate extends React.Component {
           description={plainTextDescription}
           image={`http:${post.heroImage?.resize.src}`}
           // image={`http:${post.heroImage.resize.src}`}
-
         />
         <Hero
           image={post.heroImage?.gatsbyImage}
@@ -62,6 +61,9 @@ class BlogPostTemplate extends React.Component {
             <div className={styles.body}>
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
+            <GatsbyImage image={post.heroImage?.gatsbyImage} alt={post.title} />
+            <GatsbyImage image={post.gatsbyImage} alt={post.title} />
+
             <Tags tags={post.tags} />
             {(previous || next) && (
               <nav>
@@ -94,7 +96,7 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
-    $slug: String! 
+    $slug: String!
     $previousPostSlug: String
     $nextPostSlug: String
   ) {
@@ -114,7 +116,13 @@ export const pageQuery = graphql`
       }
       body {
         raw
-        
+        references {
+          ... on ContentfulAsset {
+            __typename
+            contentful_id
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
       }
       tags
       description {

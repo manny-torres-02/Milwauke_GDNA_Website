@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import '../components/calendar.css';
+import '../components/calendar.css'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const Calendar = ({}) => {
@@ -39,8 +39,10 @@ const Calendar = ({}) => {
         {/* {data.contentfulCalendar.calendarPdf.title}
        <h1>hello</h1>  */}
         <h1 className="calendar_link">
-          <a href={data.contentfulCalendar.calendarPdf.file.url} download="Calendar">
-           
+          <a
+            href={data.contentfulCalendar.calendarPdf.file.url}
+            download="Calendar"
+          >
             Download our calendar
           </a>
         </h1>
