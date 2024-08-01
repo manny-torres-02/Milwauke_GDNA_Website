@@ -29,11 +29,9 @@ class BlogPostTemplate extends React.Component {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
           const { gatsbyImageData, description, file } = node.data.target
           const image = getImage(gatsbyImageData)
-          return image ? (
-            <GatsbyImage image={image} alt={description || ''} />
-          ) : (
-            <img src={file.url} alt={description || ''} />
-          )
+          return <GatsbyImage image={image} alt={description || ''} />
+
+          // <img src={file.url} alt={description || ''} />
         },
       },
     }
@@ -61,7 +59,7 @@ class BlogPostTemplate extends React.Component {
             <div className={styles.body}>
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
-            <GatsbyImage image={post.heroImage?.gatsbyImage} alt={post.title} />
+            {/* <GatsbyImage image={post.heroImage?.gatsbyImage} alt={post.title} /> */}
             <GatsbyImage image={post.gatsbyImage} alt={post.title} />
 
             <Tags tags={post.tags} />
