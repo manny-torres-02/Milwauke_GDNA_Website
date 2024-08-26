@@ -1,8 +1,12 @@
+# This is the Wesbite for the Milwaukee Garden District
+
+- This was built using Gatsby, React, CSS, HTML, Javascript, Contentful, and GraphQL
+
 # Contentful Gatsby Starter Blog
 
 Create a [Gatsby](http://gatsbyjs.com/) blog powered by [Contentful](https://www.contentful.com).
 
-![An article page of the starter blog](./screenshot.png "An article page of the starter blog")
+![An article page of the starter blog](./screenshot.png 'An article page of the starter blog')
 
 Static sites are scalable, secure and have very little required maintenance. They come with a drawback though. Not everybody feels good editing files, building a project and uploading it somewhere. This is where Contentful comes into play.
 
@@ -33,7 +37,6 @@ Use Deploy Now to get started in [Gatsby Cloud](https://gatsbyjs.com/products/cl
 
 If you use Deploy Now, Gatsby Cloud will run the `gatsby-provision` script on your behalf, if you choose, after you Quick Connected to your empty Contentful Space. That script will add the necessary content models and content to support this site.
 
-
 Or use the [Gatsby CLI](https://www.npmjs.com/package/gatsby-cli).
 
 ```
@@ -62,10 +65,7 @@ Run a production build into `./public`. The result is ready to be put on any sta
 
 Spin up a production-ready server with your blog. Don't forget to build your page beforehand.
 
-
 ## Gatsby Develop
-
-
 
 ## Deployment
 
@@ -77,6 +77,4 @@ Feel free to open pull requests to fix bugs. If you want to add features, please
 
 You can learn more about how Contentful userland is organized by visiting [our about repository](https://github.com/contentful-userland/about).
 
-Gatsby Clean - clean build 
-
-
+Gatsby Clean - clean build
