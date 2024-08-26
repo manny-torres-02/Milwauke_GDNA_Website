@@ -36,6 +36,11 @@ class BlogPostTemplate extends React.Component {
       },
     }
 
+    // const output = renderRichText(options)
+    const output = renderRichText(post.body, options)
+    console.log(post.body)
+    // console.log(output)
+
     return (
       <Layout location={this.props.location}>
         <Seo
@@ -110,6 +115,9 @@ export const pageQuery = graphql`
         gatsbyImage(layout: FULL_WIDTH, placeholder: BLURRED, width: 1280)
         resize(height: 630, width: 1200) {
           src
+        }
+        file {
+          url
         }
       }
       body {
