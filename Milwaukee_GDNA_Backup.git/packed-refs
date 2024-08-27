@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+fecaa0844deca60a332b6d99924f8fb294feb559 refs/heads/blog_template_testing
+27896f8a76d60368a3aa5506814da9e079fdd64d refs/heads/master
+97b3bb0c4dfb3d0c0f1b9816e5f0f46c6e9b7a52 refs/heads/upgrade_gatsby_5
+34c454ef2aed0a70df5ab4b32294ed167f20a41e refs/pull/1/head
+fecaa0844deca60a332b6d99924f8fb294feb559 refs/pull/2/head
