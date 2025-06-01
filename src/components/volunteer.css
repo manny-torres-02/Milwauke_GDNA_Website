@@ -1,0 +1,11 @@
+.donation {
+  display: flex;
+  flex-direction: column;
+}
+.donation > * {
+  width: 50%;
+}
+.paypalQRCode {
+  height: 200px;
+  width: 200px;
+}

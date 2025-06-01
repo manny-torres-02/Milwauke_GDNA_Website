@@ -45,6 +45,33 @@
   height: 160px;
   width: 160px;
 }
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
 @media (max-width: 767px) {
   .logoLink > span:last-child {
     border: 0;
@@ -57,11 +84,52 @@
     white-space: nowrap;
     width: 1px;
   }
+
   .logo {
     height: 80px;
-    /* display: none; */
     width: 80px;
   }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    gap: var(--space-lg);
+  }
+
+  .navigationOpen {
+    right: 0;
+  }
+
+  .navigationItem {
+    width: 100%;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navigationItem:last-child {
+    border-bottom: none;
+  }
+
+  .navigationItem a {
+    display: block;
+    padding: var(--space-sm) 0;
+    font-size: 1.1rem;
+  }
+
   ul {
     padding-left: 0;
   }

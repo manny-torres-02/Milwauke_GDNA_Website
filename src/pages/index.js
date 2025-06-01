@@ -6,6 +6,8 @@ import ReactGA from 'react-ga4'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
+import '../components/index.css'
+import paypalQRCode from '../assets/mgdna_paypal_QR_Code.png'
 
 class RootIndex extends React.Component {
   render() {
@@ -22,6 +24,7 @@ class RootIndex extends React.Component {
           title={author.name}
           content={author.shortBio}
         />
+
         <ArticlePreview posts={posts} />
       </Layout>
     )

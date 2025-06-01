@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import { useStaticQuery } from 'gatsby'
 
 import * as styles from './navigation.module.css'
 
 const Navigation = ({}) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const logo = useStaticQuery(graphql`
     query logo {
       contentfulAsset(contentful_id: { eq: "7czINe9HAu90wBzrc8Athc" }) {
@@ -35,7 +36,14 @@ const Navigation = ({}) => {
   console.log(logo)
 
   return (
-    <nav role="navigation" className={styles.container} aria-label="Main">
+    <>
+      {isMenuOpen && (
+        <div 
+          className={styles.backdrop} 
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+      <nav role="navigation" className={styles.container} aria-label="Main">
       <Link to="/" className={styles.logoLink}>
         {/* <Link to="/" className="logoLink" > */}
 
@@ -43,32 +51,42 @@ const Navigation = ({}) => {
         {/* <p>{logo.contentfulAsset.id}</p> */}
         {/* <span className={styles.navigationItem}>Milwaukee GDNA</span> */}
       </Link>
-      <ul className={styles.navigation}>
+      <button 
+        className={styles.hamburger}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle navigation"
+        aria-expanded={isMenuOpen}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul className={`${styles.navigation} ${isMenuOpen ? styles.navigationOpen : ''}`}>
         <li className={styles.navigationItem}>
-          <Link to="/" activeClassName="active">
+          <Link to="/" activeClassName="active" onClick={() => setIsMenuOpen(false)}>
             Home
           </Link>
         </li>
         <li className={styles.navigationItem}>
-          <Link to="/blog/" activeClassName="active">
+          <Link to="/blog/" activeClassName="active" onClick={() => setIsMenuOpen(false)}>
             Blog
           </Link>
         </li>
         <li className={styles.navigationItem}>
-          <Link to="/board/" activeClassName="active">
+          <Link to="/board/" activeClassName="active" onClick={() => setIsMenuOpen(false)}>
             The Board
           </Link>
         </li>
-        <li>
-          <Link to="/calendar/">Calendar</Link>
+        <li className={styles.navigationItem}>
+          <Link to="/calendar/" onClick={() => setIsMenuOpen(false)}>Calendar</Link>
         </li>
         <li className={styles.navigationItem}>
-          <Link to="/volunteer" activeClassName="active">
-            Volunteer
+          <Link to="/volunteer" activeClassName="active" onClick={() => setIsMenuOpen(false)}>
+            Donate and Volunteer
           </Link>
         </li>
-        <li className={styles.NavigationItem}>
-          <Link to="/resources" activeClassName="active">
+        <li className={styles.navigationItem}>
+          <Link to="/resources" activeClassName="active" onClick={() => setIsMenuOpen(false)}>
             Links
           </Link>
         </li>
@@ -90,7 +108,8 @@ const Navigation = ({}) => {
 
       </li> */}
       </ul>
-    </nav>
+      </nav>
+    </>
   )
 }
 

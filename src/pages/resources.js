@@ -36,7 +36,7 @@ const Resources = () => {
               }
               download
             >
-              Download the 2024 Garden Application
+              Download the 2025 Garden Application
             </a>
           </li>
         </ul>

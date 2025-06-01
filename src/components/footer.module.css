@@ -3,21 +3,117 @@
   font-size: var(--text-sm);
   margin-top: var(--space-2xl);
   padding: var(--space-2xl) 0;
-  text-align: right;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.socialSection,
+.donateSection,
+.contactSection {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.container a {
-  border-bottom: 1.5px solid transparent;
+.sectionTitle {
+  font-size: var(--text-base);
   font-weight: var(--medium);
-}
-
-.container a:hover {
-  border-bottom-color: var(--primary);
+  margin-bottom: var(--space-md);
   color: var(--primary);
 }
 
+.socialIcons {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.socialLink {
+  border-bottom: 1.5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-2px);
+}
+
+.socialIcon {
+  height: 60px;
+  width: 60px;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  opacity: 0.8;
+}
+
+.qrCode {
+  height: 80px;
+  width: 80px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.address {
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--text-secondary, #666);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    text-align: center;
+    padding: var(--space-xl) 0;
+  }
+  
+  .socialIcons {
+    justify-content: center;
+  }
+  
+  .socialIcon {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .qrCode {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .sectionTitle {
+    font-size: var(--text-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: var(--space-xl);
+    padding: var(--space-lg) 0;
+  }
+  
+  .socialIcon {
+    height: 45px;
+    width: 45px;
+  }
+  
+  .qrCode {
+    height: 90px;
+    width: 90px;
+  }
+  
+  .socialIcons {
+    gap: var(--space-sm);
+  }
+}
+
+/* Legacy class for backwards compatibility */
 .facebook_icon {
-  height: 50px;
+  height: 75px;
+  width: 75px;
 }
