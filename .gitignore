@@ -73,6 +73,10 @@ public
 .DS_Store
 Thumbs.db
 
+#claude code md file
+*.claude
+*CLAUDE.md
+
 
 process.env
 
