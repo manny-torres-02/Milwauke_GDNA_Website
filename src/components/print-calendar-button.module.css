@@ -1,0 +1,39 @@
+.printButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.printButton:hover {
+  background: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.printButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.printButton:focus {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .printButton {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+}

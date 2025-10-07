@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/page": "/",
+  "/blog/page": "/blog",
+  "/board/page": "/board",
+  "/calendar/page": "/calendar",
+  "/resources/page": "/resources",
+  "/volunteer/page": "/volunteer"
+}

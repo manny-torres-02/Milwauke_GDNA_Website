@@ -7,6 +7,7 @@ import { getBlogPost, getAllBlogSlugs } from '../../../lib/contentful'
 import Layout from '../../../src/components/layout-next'
 import Hero from '../../../src/components/hero-next'
 import Tags from '../../../src/components/tags'
+import RichTextRenderer from '../../../src/components/rich-text-renderer'
 import * as styles from '../../../src/templates/blog-post.module.css'
 
 export async function generateStaticParams() {
@@ -18,14 +19,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const post = await getBlogPost(params.slug)
-  
+
   if (!post) {
     return {
       title: 'Post Not Found',
     }
   }
 
-  const plainTextDescription = post.fields.description 
+  const plainTextDescription = post.fields.description
     ? documentToPlainTextString(post.fields.description)
     : 'Read this blog post from the Milwaukee Garden District Neighborhood Association'
 
@@ -35,34 +36,31 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: post.fields.title,
       description: plainTextDescription,
-      images: post.fields.heroImage ? [
-        {
-          url: `https:${post.fields.heroImage.fields.file.url}?w=1200&h=630&fit=fill`,
-          width: 1200,
-          height: 630,
-        }
-      ] : [],
+      images: post.fields.heroImage
+        ? [
+            {
+              url: `https:${post.fields.heroImage.fields.file.url}?w=1200&h=630&fit=fill`,
+              width: 1200,
+              height: 630,
+            },
+          ]
+        : [],
     },
   }
 }
 
 export default async function BlogPostPage({ params }) {
   const post = await getBlogPost(params.slug)
-  
+
   if (!post) {
     notFound()
   }
 
   const { fields } = post
-  const plainTextBody = fields.body 
+  const plainTextBody = fields.body
     ? documentToPlainTextString(fields.body)
     : ''
   const { minutes: timeToRead } = readingTime(plainTextBody)
-
-  // Convert rich text to plain text for display
-  const bodyText = fields.body 
-    ? documentToPlainTextString(fields.body)
-    : 'Content will be displayed here.'
 
   return (
     <Layout>
@@ -75,17 +73,18 @@ export default async function BlogPostPage({ params }) {
         <span className={styles.meta}>
           {fields.author?.fields?.name && `${fields.author.fields.name} · `}
           <time dateTime={fields.publishDate}>
-            {fields.publishDate && new Date(fields.publishDate).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
+            {fields.publishDate &&
+              new Date(fields.publishDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
           </time>
           {timeToRead > 0 && ` – ${timeToRead} minute read`}
         </span>
         <div className={styles.article}>
           <div className={styles.body}>
-            <p>{bodyText}</p>
+            <RichTextRenderer document={fields.body} />
           </div>
           <Tags tags={fields.tags} />
           <nav>

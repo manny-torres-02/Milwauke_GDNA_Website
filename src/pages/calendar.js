@@ -18,24 +18,9 @@ const Calendar = ({}) => {
     }
   `)
 
-  // const data = useStaticQuery(graphql`
-  // query MyQuery {
-  //   contentfulAsset(contentful_id: {eq: "1jBokgJn1ZPBk2bzv4lFaC"}) {
-  //     calendarPdf
-  //       title
-  //       file {
-  //         url
-  //       }
-  //       description
-  //     }
-  //   }
-  // }`)
-
-  console.log(data)
-
   return (
     <Layout>
-      <div className="about-container">
+      <div className="calendar-container">
         {/* {data.contentfulCalendar.calendarPdf.title}
        <h1>hello</h1>  */}
         <h1 className="calendar_link">

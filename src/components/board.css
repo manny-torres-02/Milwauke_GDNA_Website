@@ -3,28 +3,27 @@
 } */
 
 .image-container {
-  width: 400px; /* Set the width of the container */
-  height: 400px; /* Set the height of the container */
-  overflow: hidden; /* Hide any image overflow */
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   margin: auto;
 }
 .board_member_photo {
-
   /* margin: 0 auto; */
-   /* height: 45%; */
-  /* width: 50%; */ 
+  /* height: 45%; */
+  /* width: 50%; */
   /* width: 250px;
   height: 250px; */
 
   max-width: 100%; /* Set the maximum width of the image to 100% of the container */
   max-height: 100%;
-  background-size: cover;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
+  /* background-size: cover; */
+  /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9); */
   overflow: hidden;
-  object-fit: contain ;
+  object-fit: contain;
 }
 
 .flexing {
@@ -50,14 +49,13 @@
   /* overflow: hidden; Hide any image overflow */
 }
 
-.box2 { 
+.box2 {
   /* background-color: blue; */
   /* width: 400px; Set the width of the container */
   /* height: 300px; Set the height of the container */
   /* overflow: hidden; Hide any image overflow */
-/*  */
-} 
-
+  /*  */
+}
 
 h4 {
   text-align: center;
@@ -65,7 +63,7 @@ h4 {
 /* REDO The media Queries */
 @media (max-width: 480px) {
   body {
-    width: 100%
+    width: 100%;
   }
   .details {
     padding-top: var(--space-3xl);

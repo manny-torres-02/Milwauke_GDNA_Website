@@ -6,7 +6,8 @@ import '../../src/components/board.css'
 
 export const metadata = {
   title: 'Board | Milwaukee Garden District Neighborhood Association',
-  description: 'Meet the board members of the Milwaukee Garden District Neighborhood Association.',
+  description:
+    'Meet the board members of the Milwaukee Garden District Neighborhood Association.',
 }
 
 export default async function BoardPage() {
@@ -15,6 +16,10 @@ export default async function BoardPage() {
   return (
     <Layout>
       <Container>
+        <h1>
+          Meet the board members of the Milwaukee Garden District Neighborhood
+          Association.
+        </h1>
         <div className="flexing">
           {boardMembers.map((member) => {
             const { fields } = member
@@ -30,15 +35,13 @@ export default async function BoardPage() {
                         alt={fields.name}
                         width={300}
                         height={300}
-                        style={{
-                          objectFit: 'cover',
-                        }}
+                        // style={{
+                        //   // objectFit: 'cover',
+                        // }}
                       />
                     )}
                   </div>
-                  {fields.biography && (
-                    <p>{fields.biography}</p>
-                  )}
+                  {fields.biography && <p>{fields.biography}</p>}
                 </div>
               </div>
             )

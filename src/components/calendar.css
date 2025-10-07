@@ -1,3 +1,18 @@
 .calendar_link {
-    text-align: center;
+  text-align: center;
+}
+
+.calendar_container {
+  /* max-width: var(--size-max-width);
+  margin: 0px auto;
+  padding: var(--space-2xl) var(--size-gutter); */
+  width: 95%;
+  margin: auto;
+}
+
+.calendar_wrapper {
+}
+
+iframe {
+  /* margin: auto; */
 }

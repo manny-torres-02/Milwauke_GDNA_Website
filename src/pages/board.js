@@ -5,7 +5,6 @@ import '../components/global.css'
 import '../components/board.css'
 import '../components/variables.css'
 import Container from '../components/container'
-// import '../components/global.css'
 const Board = () => {
 
   const test4 = useStaticQuery(graphql`
@@ -25,7 +24,6 @@ const Board = () => {
       }
     }
   `)
-  // console.log(testBoard)
 
   console.log(test4)
 
