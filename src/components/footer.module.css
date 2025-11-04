@@ -63,6 +63,29 @@
   color: var(--text-secondary, #666);
 }
 
+.ctaButton {
+  margin-top: var(--space-md);
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--primary, #007cba);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 124, 186, 0.25);
+}
+
+.ctaButton:hover {
+  background: #005a87; /* darker blue hover */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 90, 135, 0.3);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .container {
@@ -71,21 +94,21 @@
     text-align: center;
     padding: var(--space-xl) 0;
   }
-  
+
   .socialIcons {
     justify-content: center;
   }
-  
+
   .socialIcon {
     height: 50px;
     width: 50px;
   }
-  
+
   .qrCode {
     height: 100px;
     width: 100px;
   }
-  
+
   .sectionTitle {
     font-size: var(--text-lg);
   }
@@ -96,17 +119,17 @@
     gap: var(--space-xl);
     padding: var(--space-lg) 0;
   }
-  
+
   .socialIcon {
     height: 45px;
     width: 45px;
   }
-  
+
   .qrCode {
     height: 90px;
     width: 90px;
   }
-  
+
   .socialIcons {
     gap: var(--space-sm);
   }

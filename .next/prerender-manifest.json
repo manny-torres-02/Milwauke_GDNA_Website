@@ -50,6 +50,54 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/board": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/board",
+      "dataRoute": "/board.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog",
+      "dataRoute": "/blog.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/": {
       "experimentalBypassFor": [
         {
@@ -89,54 +137,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/calendar",
       "dataRoute": "/calendar.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blog": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blog",
-      "dataRoute": "/blog.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/board": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/board",
-      "dataRoute": "/board.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -434,6 +434,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/blog/volunteer-and-bring-winter-wonderland-to-life": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/volunteer-and-bring-winter-wonderland-to-life.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/blog/wiolettas-polish-market-at-3955-s-howell-avenue": {
       "experimentalBypassFor": [
         {
@@ -512,8 +536,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "c6ae75a6a93e7adb3b7775b8fce4064e",
-    "previewModeSigningKey": "f65c76ca50095f6ce2c3c3683a56b7da59ec6f7ed54f07057c4e4c29b1caa4ab",
-    "previewModeEncryptionKey": "c43d85b19611fccf273d5aa3c44b6bea7f4b0c700d768234502c2b12468cadcd"
+    "previewModeId": "f37a25b0199a3627c952d39df72d54b4",
+    "previewModeSigningKey": "c31bdbbfe362225ce7a02fef5ccff1ba520582f9c647cadcbb0c6537f657562c",
+    "previewModeEncryptionKey": "7b3637d799cc8daa2684b51f2295ca3eb7585643fd0ceaffab883fc5a54f2560"
   }
 }
