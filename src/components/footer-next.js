@@ -57,7 +57,7 @@ const Footer = () => (
           width={200}
           height={200}
         />
-        <a
+        {/* <a
           href="https://www.signupgenius.com/go/20F054DABAF2BAAF49-59680253-winter#/"
           target="_blank"
           rel="noopener noreferrer"
@@ -65,7 +65,7 @@ const Footer = () => (
           aria-label="Volunteer for Winter Wonderland set up"
         >
           Volunteer for Winter Wonderland set up
-        </a>
+        </a> */}
       </section>
 
       <section className={styles.contactSection}>

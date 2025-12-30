@@ -1,6 +1,7 @@
 .donation {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 .donation > * {
   width: 50%;
@@ -8,6 +9,22 @@
 .paypalQRCode {
   height: 200px;
   width: 200px;
+}
+
+.volunteer-content p {
+  margin: 0 0 1rem;
+}
+
+.volunteer-content ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.volunteerImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
 }
 
 .ctaButton {

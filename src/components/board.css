@@ -60,6 +60,11 @@
 h4 {
   text-align: center;
 }
+
+/* Preserve newline characters in biographies as visible line breaks */
+.box1 p {
+  white-space: pre-line;
+}
 /* REDO The media Queries */
 @media (max-width: 480px) {
   body {
