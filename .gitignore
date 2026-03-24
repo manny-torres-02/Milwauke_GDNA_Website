@@ -81,3 +81,5 @@ Thumbs.db
 process.env
 
 old_readme.md
+
+*/out/*

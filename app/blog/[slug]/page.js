@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }) {
         </span>
         <div className={styles.article}>
           <div className={styles.body}>
-            <RichTextRenderer document={fields.body} />
+            <RichTextRenderer document={fields.body} links={fields.bodyLinks} />
           </div>
           <Tags tags={fields.tags} />
           <nav>

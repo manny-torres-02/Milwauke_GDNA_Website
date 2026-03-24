@@ -50,6 +50,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
+    "preview": "npx serve@latest out",
     "heroku-postbuild": "next build",
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",

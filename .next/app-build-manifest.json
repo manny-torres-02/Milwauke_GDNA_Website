@@ -12,11 +12,11 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/resources/page": [
+    "/calendar/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/resources/page.css",
-      "static/chunks/app/resources/page.js"
+      "static/css/app/calendar/page.css",
+      "static/chunks/app/calendar/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

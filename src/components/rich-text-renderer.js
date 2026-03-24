@@ -2,7 +2,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import Image from 'next/image'
 
-const RichTextRenderer = ({ document }) => {
+const RichTextRenderer = ({ document, links }) => {
   if (!document) {
     return null
   }
@@ -10,12 +10,38 @@ const RichTextRenderer = ({ document }) => {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { file, title } = node.data.target.fields
-        const { url, details } = file
-        const { width, height } = details.image
+        // Prefer REST shape if present
+        let title
+        let url
+        let width
+        let height
 
+        if (node?.data?.target?.fields) {
+          const { file, title: restTitle } = node.data.target.fields
+          title = restTitle
+          url = file?.url
+          const details = file?.details
+          width = details?.image?.width
+          height = details?.image?.height
+        } else if (links && node?.data?.target?.sys?.id) {
+          // GraphQL Rich Text: resolve via links.assets.block
+          const targetId = node.data.target.sys.id
+          const asset = links?.assets?.block?.find(
+            (a) => a?.sys?.id === targetId
+          )
+          if (asset) {
+            title = asset.title
+            url = asset.url
+            width = asset.width
+            height = asset.height
+          }
+        }
+
+        if (!url || !width || !height) return null
+
+        const normalizedUrl = url.startsWith('//') ? `https:${url}` : url
         // Use higher quality URL with Contentful's image transformation
-        const highQualityUrl = `https:${url}?fm=webp&q=90&w=${Math.min(
+        const highQualityUrl = `${normalizedUrl}?fm=webp&q=90&w=${Math.min(
           width,
           1200
         )}`
